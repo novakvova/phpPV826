@@ -1,3 +1,23 @@
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST") {
+    $email = $_POST["txt_email"];
+    $password = $_POST["txt_password"];
+    //echo "<script>alert('".$password."');</script>";
+    if(!empty($email) && !empty($password)) {
+        $user="peter";
+        $pass="123456";
+        $dbh = new PDO('mysql:host=localhost;dbname=sopilkadb', $user, $pass);
+
+        $sql = "INSERT INTO `tbl_users` (`email`, `password`, `image`) VALUES (?, ?, 'nophoto');";
+        $stmt= $dbh->prepare($sql);
+        $stmt->execute([$email, $password]);
+
+        header("Location: index.php");
+        exit();
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,15 +36,21 @@
     <div class="row">
         <h1 class="col-12 text-center">Реєстрація</h1>
 
-        <form class="offset-3 col-6">
+        <form method="post" class="offset-3 col-6">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="email" class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       name="txt_email"
+                       placeholder="Enter email">
+
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control"
+                       name="txt_password"
+                       id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
