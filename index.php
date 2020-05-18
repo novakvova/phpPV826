@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<h1>Головна сторінка</h1>
 <?php
 //$a=2;
 //$b="23";
@@ -21,6 +22,6 @@
 //}
 ?>
 
-
+<?php include("scripts.php"); ?>
 </body>
 </html>
