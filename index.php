@@ -10,7 +10,14 @@
 </head>
 <body>
 
-<h1>Головна сторінка</h1>
+<?php include("navbar.php") ?>
+
+<div class="container">
+    <div class="row">
+        <h1>Головна сторінка</h1>
+    </div>
+</div>
+
 <?php
 //$a=2;
 //$b="23";
