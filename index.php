@@ -11,10 +11,36 @@
 <body>
 
 <?php include("navbar.php") ?>
-
+<?php include_once ("connection_database.php");?>
 <div class="container">
     <div class="row">
         <h1>Головна сторінка</h1>
+
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $sql = "SELECT u.id, u.email FROM tbl_users AS u";
+            $stmt= $dbh->prepare($sql);
+            $stmt->execute();
+            while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+            {
+                ?>
+                <tr>
+                    <td scope="row">1</td>
+                    <td> <?php echo $row['email']; ?> </td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+
     </div>
 </div>
 

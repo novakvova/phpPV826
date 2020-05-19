@@ -4,9 +4,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     $password = $_POST["txt_password"];
     //echo "<script>alert('".$password."');</script>";
     if(!empty($email) && !empty($password)) {
-        $user="peter";
-        $pass="123456";
-        $dbh = new PDO('mysql:host=localhost;dbname=sopilkadb', $user, $pass);
+       include_once("connection_database.php");
 
         $sql = "INSERT INTO `tbl_users` (`email`, `password`, `image`) VALUES (?, ?, 'nophoto');";
         $stmt= $dbh->prepare($sql);
