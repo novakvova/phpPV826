@@ -4,11 +4,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     $password = $_POST["txt_password"];
     //echo "<script>alert('".$password."');</script>";
     if(!empty($email) && !empty($password)) {
+
+        include_once("lib/compressor.php");
+
+        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/upload/';
+        $file_name= uniqid('100_').'.jpg';
+        $file_save_path=$uploaddir.$file_name;
+
+        my_image_resize(100, 100, $file_save_path, 'image');
+//        if (move_uploaded_file($_FILES['image']['tmp_name'], $file_save_path)) {
+//            echo "Файл корректен и был успешно загружен.\n";
+//        } else {
+//            echo "Возможная атака с помощью файловой загрузки!\n";
+//        }
+
+
+
        include_once("connection_database.php");
 
-        $sql = "INSERT INTO `tbl_users` (`email`, `password`, `image`) VALUES (?, ?, 'nophoto');";
+        $sql = "INSERT INTO `tbl_users` (`email`, `password`, `image`) VALUES (?, ?, ?);";
         $stmt= $dbh->prepare($sql);
-        $stmt->execute([$email, $password]);
+        $stmt->execute([$email, $password, $file_name]);
 
         header("Location: index.php");
         exit();
@@ -34,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     <div class="row">
         <h1 class="col-12 text-center">Реєстрація</h1>
 
-        <form method="post" class="offset-3 col-6">
+        <form method="post" class="offset-3 col-6" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control"
@@ -50,6 +66,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
                        name="txt_password"
                        id="exampleInputPassword1" placeholder="Password">
             </div>
+
+            <div class="form-group">
+                <input type="file" class="form-control"
+                       name="image"
+                       id="image">
+            </div>
+
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>

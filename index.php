@@ -25,14 +25,16 @@
             </thead>
             <tbody>
             <?php
-            $sql = "SELECT u.id, u.email FROM tbl_users AS u";
+            $sql = "SELECT u.id, u.email, u.image FROM tbl_users AS u";
             $stmt= $dbh->prepare($sql);
             $stmt->execute();
             while($row=$stmt->fetch(PDO::FETCH_ASSOC))
             {
                 ?>
                 <tr>
-                    <td scope="row">1</td>
+                    <td scope="row">
+                        <img src="/upload/<?php echo $row['image'];?> " width="100" alt="">
+                    </td>
                     <td> <?php echo $row['email']; ?> </td>
                 </tr>
                 <?php
