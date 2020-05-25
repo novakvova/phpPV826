@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a02c3440-3ac0-4878-81b4-9a73f0c60bc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/compressor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/100_5ec6aa769fd92.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/300_5ec69e3a64bac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/300_5ec6a42995fa8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/300_5ec6a737eeb51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/300_5ec6a79f6de35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-    </list>
+    <list default="true" id="e9cdfd9d-c6f4-493c-9512-37a829828563" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1c5Qhn3Ix031rdgjTZpBlZgCcJR" />
+  <component name="ProjectId" id="1c53WtUwahkwdrULiqgLUgZwi1K" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -59,14 +49,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a02c3440-3ac0-4878-81b4-9a73f0c60bc7" name="Default Changelist" comment="" />
-      <created>1589816095206</created>
+      <changelist id="e9cdfd9d-c6f4-493c-9512-37a829828563" name="Default Changelist" comment="" />
+      <created>1589804662355</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589816095206</updated>
-      <workItem from="1589816096997" duration="7813000" />
-      <workItem from="1589901033793" duration="3684000" />
-      <workItem from="1590073851718" duration="4579000" />
+      <updated>1589804662355</updated>
+      <workItem from="1589804666544" duration="7881000" />
+      <workItem from="1589890144803" duration="4238000" />
+      <workItem from="1590409198748" duration="8473000" />
     </task>
     <servers />
   </component>
