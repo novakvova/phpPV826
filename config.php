@@ -4,7 +4,12 @@
 //define('DB_PASSWORD','123456');
 //define('DB_HOST','localhost');
 
-define('DB_NAME','demodb');
-define('DB_USER','demouser');
-define('DB_PASSWORD','Qwe2-rty*66KddQwer-19mdjyf');
-define('DB_HOST','52.185.201.144');
+//define('DB_NAME','demodb');
+//define('DB_USER','demouser');
+//define('DB_PASSWORD','Qwe2-rty*66KddQwer-19mdjyf');
+//define('DB_HOST','52.185.201.144');
+
+define('DB_NAME','mysql');
+define('DB_USER','dummy');
+define('DB_PASSWORD','dummy');
+define('DB_HOST','dummy');
