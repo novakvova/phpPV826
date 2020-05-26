@@ -14,6 +14,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <a id="img-rotation" class="btn btn-success"><i class="fa fa-repeat" aria-hidden="true"></i></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button id="cropImg" class="btn btn-primary">Обрізати фото</button>
             </div>

@@ -144,6 +144,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
             },
         });
 
+        $("#img-rotation").on("click",function (e) {
+            e.preventDefault();
+            cropper.rotate(45);
+        });
+
         $("#cropImg").on("click", function (e) {
             e.preventDefault();
 
