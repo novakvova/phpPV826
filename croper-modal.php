@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <div>
-                    <img id="salo" src="img/1.jpg" width="600">
+                    <img id="salo" src="img/1.jpg" height="400">
                 </div>
             </div>
             <div class="modal-footer">
