@@ -9,7 +9,7 @@
 //define('DB_PASSWORD','Qwe2-rty*66KddQwer-19mdjyf');
 //define('DB_HOST','52.185.201.144');
 
-define('DB_NAME','mykola');
-define('DB_USER','poplavok');
-define('DB_PASSWORD','Qw*49w8834sstt-098dsc');
-define('DB_HOST','mysql');
+define('DB_NAME','lopata');
+define('DB_USER','kaban');
+define('DB_PASSWORD','Olkeid&dje*7dje6hdne7&&dGGtde');
+define('DB_HOST','192.168.0.120');

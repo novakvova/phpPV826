@@ -40,6 +40,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include("style.php"); ?>
+    <link rel="stylesheet" href="node_modules/cropperjs/dist/cropper.min.css">
+    <style>
+        /* Ensure the size of the image fit the container perfectly */
+        img {
+              display: block;
+
+              /* This rule is very important, please don't ignore this */
+              max-width: 100%;
+          }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -67,8 +77,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
                        id="exampleInputPassword1" placeholder="Password">
             </div>
 
+            <div>
+                <img id="valera" src="">
+            </div>
+
+
             <div class="form-group">
                 <input type="file" class="form-control"
+
                        name="image"
                        id="image">
             </div>
@@ -84,17 +100,60 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     </div>
 </div>
 
-<?php
-//$a=2;
-//$b="23";
-//$c=$a+$b;
-//echo "<h1>Hello php ".$c."</h1>";
-//echo "<h1>".$semen."</h1>";
-//if(isset($ivan)) {
-//    echo "<h1>" . $ivan . "</h1>";
-//}
-?>
+
+<?php include_once("croper-modal.php");?>
 
 <?php include("scripts.php"); ?>
+<script src="node_modules/cropperjs/dist/cropper.min.js"></script>
+
+<script>
+    $(function() {
+
+        let dialogCropper = $("#cropperModal");
+        $("#image").on("change", function() {
+            //console.log("----select file------", this.files);
+            //this.files;
+            if (this.files && this.files.length) {
+                let file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    //cropper.destroy();
+                    //$('#salo').attr('src', e.target.result);
+                    dialogCropper.modal('show');
+                    cropper.replace(e.target.result);
+
+                }
+                reader.readAsDataURL(file);
+
+            }
+        });
+
+        const image = document.getElementById('salo');
+        const cropper = new Cropper(image, {
+            aspectRatio: 1/1,
+            viewMode: 1,
+            autoCropArea: 0.5,
+            crop(event) {
+                // console.log(event.detail.x);
+                // console.log(event.detail.y);
+                // console.log(event.detail.width);
+                // console.log(event.detail.height);
+                // console.log(event.detail.rotate);
+                // console.log(event.detail.scaleX);
+                // console.log(event.detail.scaleY);
+            },
+        });
+
+        $("#cropImg").on("click", function (e) {
+            e.preventDefault();
+
+            var imgContent = cropper.getCroppedCanvas().toDataURL();
+            $("#valera").attr("src", imgContent);
+            dialogCropper.modal('hide');
+        });
+    });
+
+</script>
+
 </body>
 </html>
